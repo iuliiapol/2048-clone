@@ -7,18 +7,31 @@
     padding: 5px 0px 10px 0px;
 }
 
+/* 
+    Based on the code here: 
+    https://codepen.io/shammadahmed/pen/JOWEGW
+*/
 .tiles{
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 120px 120px 120px 120px;
-    grid-template-rows: 120px 120px 120px 120px;
+    width: 520px;
+    height: 520px;
+
+    background-color: #373F51;
+    border: 15px solid #373F51;
+    border-radius: 6px;
+
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
     justify-content: center;
 }
     
 .tiles .cell {
-    background-color: rgb(224, 224, 224);
+    background-color: #9AADBF;
+    color: black;
     text-align: center;
     font-weight: bold;
-    border: 1.5px solid rgb(161, 74, 48);
+    border: 8px solid #373F51;
+    border-radius: 15px;
     font-size: 35px;
     text-transform: uppercase;
 }
