@@ -1,0 +1,24 @@
+{
+  "name": "2048-project",
+  "version": "1.0.0",
+  "description": "Clone of 2048",
+  "main": "smth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuliiapol/2048-clone.git"
+  },
+  "author": "iuliiapol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iuliiapol/2048-clone/issues"
+  },
+  "homepage": "https://github.com/iuliiapol/2048-clone#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.13",
+    "bulma": "^0.9.1",
+    "jquery": "^3.5.1"
+  }
+}

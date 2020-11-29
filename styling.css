@@ -1,0 +1,52 @@
+.container {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.title {
+    text-align: center;
+    padding: 5px 0px 10px 0px;
+}
+
+.tiles{
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px;
+    grid-template-rows: 120px 120px 120px 120px;
+    justify-content: center;
+}
+    
+.tiles .cell {
+    background-color: rgb(224, 224, 224);
+    text-align: center;
+    font-weight: bold;
+    border: 1.5px solid rgb(161, 74, 48);
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.game_status {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    justify-content: center;
+    padding: 4px 0px 20px 0px;
+    font-size: 18px;
+}
+
+.reset_button {
+    justify-content: center;
+}
+
+.messages {
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.over_message {
+    color: rgb(161, 74, 48);
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+
+.win_message {
+    color: rgb(54, 153, 80);
+    font-weight: bold;
+}
