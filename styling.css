@@ -16,6 +16,7 @@
     display: grid;
     width: 520px;
     height: 520px;
+    /* padding: 4px; */
 
     background-color: #373F51;
     border: 15px solid #373F51;
@@ -26,13 +27,14 @@
 }
     
 .tiles .cell {
+    padding-top: 14px;
     background-color: #9AADBF;
     color: black;
     text-align: center;
     font-weight: bold;
     border: 8px solid #373F51;
     border-radius: 15px;
-    font-size: 35px;
+    font-size: 50px;
     text-transform: uppercase;
 }
 
