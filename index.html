@@ -10,6 +10,10 @@
 
     <!-- Bulma Style Sheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <!-- Link to jQuery file-->
@@ -18,13 +22,19 @@
     <script src="engine/game.js" type="module"></script>
     <script src="interaction.js" type="module"></script>
 
-
     <div class="container"> 
-        <h1 class="title is-1">2048</h1>
-        <div class="desc subtitle">Use arrows to move the tiles. If two tiles have the same number, they will be merged into one with one combined value. <br> When two tiles combined give <strong>2048</strong>, YOU WIN!!!</div>
+        <div id="title_container">
+            <h1 class="title is-1">2048</h1>
+        </div>
+        <div id="scr_container">
+            <p class="title is-4" id="scr_text">SCORE:</p> 
+            <p class="title is-2" id="scr_val"> <span id="score"></span> </p>
+        </div>
     </div>
+
+    <div class="subtitle" id="desc">Use arrows to move the tiles. If two tiles have the same number, they will be merged into one with one combined value. <br> When two tiles combined give <strong>2048</strong>, YOU WIN!!!</div>
     
-    <div class="game_status">
+    <!-- <div class="game_status">
         <div class="game_score">
             score: <span id="score"></span>
         </div>
@@ -34,7 +44,7 @@
         <div class="game_win">
             is game won: <span id="is_won"></span>
         </div>
-    </div>
+    </div> -->
 
     <div class="messages">
         <div class="over_message">
