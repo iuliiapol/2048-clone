@@ -81,6 +81,7 @@ const initBoard = function (game) {
     cells.forEach(cell => {
         if (arr_vals[idx] != 0) {
             $(cell).text(arr_vals[idx]);
+            console.log(cell);
         }
         idx++;
     });

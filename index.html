@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,74 +14,61 @@
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Link to jQuery file-->
-    <script src = "https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <!-- Links to other scripts-->
     <script src="engine/game.js" type="module"></script>
     <script src="interaction.js" type="module"></script>
 
-    <div class="container"> 
+    <div class="container">
         <div id="title_container">
             <h1 class="title is-1">2048</h1>
             <div class="reset_button buttons is-centered">
-                <button class = "button is-dark" id="reset" type="submit">reset game</button>
+                <button class="button is-dark" id="reset" type="submit">reset game</button>
             </div>
         </div>
         <div id="scr_container">
-            <p class="title is-4" id="scr_text">SCORE:</p> 
+            <p class="title is-4" id="scr_text">SCORE:</p>
             <p class="title is-2" id="scr_val"> <span id="score"></span> </p>
         </div>
     </div>
 
-    <div class="subtitle" id="desc">Use arrows to move the tiles. If two tiles have the same number, they will be merged into one with one combined value. <br> <strong> When two tiles combined give 2048, YOU WIN!!!</strong></div>
-    
-    <!-- <div class="game_status">
-        <div class="game_score">
-            score: <span id="score"></span>
-        </div>
-        <div class="game_over">
-            is game over: <span id="is_over"></span>
-        </div>
-        <div class="game_win">
-            is game won: <span id="is_won"></span>
-        </div>
-    </div> -->
+    <div class="subtitle" id="desc">Use arrows to move the tiles. If two tiles have the same number, they will be merged
+        into one with one combined value. <br> <strong> When two tiles combined give 2048, YOU WIN!!!</strong></div>
 
     <div class="messages">
         <div class="over_message">
-            You lost the game :( <br> To start over press the button bellow
+            You lost the game :( <br> To start over press the "reset game" button
         </div>
         <div class="win_message">
             Congratulations! You WON! Reset the game or continue playing :)
         </div>
     </div>
 
-    <!-- <div class="reset_button buttons is-centered">
-        <button class = "button is-dark" id="reset" type="submit">reset game</button>
-    </div> -->
-
     <!-- Code for the table -->
     <div class="tiles">
-        <div class="cell" id="cell0"></div>
-        <div class="cell" id="cell1"></div>
-        <div class="cell" id="cell2"></div>
-        <div class="cell" id="cell3"></div>
-        <div class="cell" id="cell4"></div>
-        <div class="cell" id="cell5"></div>
-        <div class="cell" id="cell6"></div>
-        <div class="cell" id="cell7"></div>
-        <div class="cell" id="cell8"></div>
-        <div class="cell" id="cell9"></div>
-        <div class="cell" id="cell10"></div>
-        <div class="cell" id="cell11"></div>
-        <div class="cell" id="cell12"></div>
-        <div class="cell" id="cell13"></div>
-        <div class="cell" id="cell14"></div>
-        <div class="cell" id="cell15"></div>
-    </div> 
-
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
 </body>
+
 </html>

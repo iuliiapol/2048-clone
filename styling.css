@@ -1,3 +1,7 @@
+body {
+    background-color: #C7CCDB;
+}
+
 #game_title {
     font-family: 'Anton', sans-serif;
     font-size: 30px;
@@ -37,25 +41,8 @@
     padding-bottom: 6px;
 }
 
-/* 
-#title_container {
-    grid-column: 1;
-    grid-row: span 1/3;
-}
-
-#scr_container {
-    grid-column: 2;
-    grid-row: span 1/3;
-} */
-
-#scr_title {
-    font-size: 20px;
-    text-transform: uppercase;
-}
-
-#scr_msg {
-    font-size: 20px;
-    text-transform: uppercase;
+.reset_button {
+    justify-content: center;
 }
 
 #desc {
@@ -98,26 +85,6 @@
     border-radius: 15px;
     font-size: 50px;
     text-transform: uppercase;
-}
-
-.active_cell {
-    background-color: #E1E5EE;
-    color: #2A324B;
-
-    border: 10px solid #2A324B;
-    border-radius: 8px;
-}
-
-/* .game_status {
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    justify-content: center;
-    padding: 4px 0px 20px 0px;
-    font-size: 18px;
-} */
-
-.reset_button {
-    justify-content: center;
 }
 
 .messages {
