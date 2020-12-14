@@ -75,7 +75,7 @@ body {
     justify-content: center;
 }
     
-.tiles .cell {
+.tiles div {
     padding-top: 14px;
     background-color: #9AADBF;
     color: black;
@@ -85,6 +85,11 @@ body {
     border-radius: 15px;
     font-size: 50px;
     text-transform: uppercase;
+}
+
+.tiles .active {
+    background-color: black;
+    color: white;
 }
 
 .messages {

@@ -69,26 +69,37 @@ const initBoard = function (game) {
     let is_over = game_state.over;
     let is_won = game_state.won;
     let arr_vals = game_state.board; //gets one dimensional array version 
+    console.log(arr_vals);
 
     $("#score").text(score);
     $("#is_over").text(is_over);
     $("#is_won").text(is_won);
 
     let idx = 0; //index to iterate through underlying array of values
-    let cells = document.querySelectorAll(".cell"); //gets all elements of cell class from html
+    // let cells = document.querySelectorAll(".tiles"); //gets all elements of cell class from html
+    
+    let cells = $(".tiles").children();
+    console.log(cells);
+
+    let indexes = Object.keys(cells);
 
     //fill in cells with initial values
-    cells.forEach(cell => {
+    indexes.forEach(cell => {
         if (arr_vals[idx] != 0) {
-            $(cell).text(arr_vals[idx]);
+            console.log("active cell at index " + idx);
+            $("#" + idx).text(arr_vals[idx]);
+            $("#" + idx).toggleClass("active");
+            console.log($("#" + idx).contents());
             console.log(cell);
+        } else {
+            console.log("inactive cell at index " + idx);
         }
         idx++;
     });
 };
 
 /**
- * Removes filled in cells from the board and 
+ * Removes filled in cells from the board  
  */
 const clearData = function () {
     $(".over_message").hide();
@@ -98,6 +109,13 @@ const clearData = function () {
     $("#is_over").empty();
     $("#is_won").empty();
 
-    let cells = document.querySelectorAll(".cell"); //gets all elements of cell class from html
-    cells.forEach(cell => $(cell).empty());
+
+    let cells = Object.keys($(".tiles").children());
+    let test = 0;
+
+    while (test < 16) {
+        $("#" + test).empty();
+        $("#" + test).removeClass("active");
+        test++;
+    }
 }
