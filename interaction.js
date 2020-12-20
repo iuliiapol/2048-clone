@@ -76,7 +76,6 @@ const initBoard = function (game) {
     $("#is_won").text(is_won);
 
     let idx = 0; //index to iterate through underlying array of values
-    // let cells = document.querySelectorAll(".tiles"); //gets all elements of cell class from html
     
     let cells = $(".tiles").children();
     console.log(cells);
@@ -88,7 +87,7 @@ const initBoard = function (game) {
         if (arr_vals[idx] != 0) {
             console.log("active cell at index " + idx);
             $("#" + idx).text(arr_vals[idx]);
-            $("#" + idx).toggleClass("active");
+            $("#" + idx).css(calculateCellColor(arr_vals[idx]));
             console.log($("#" + idx).contents());
             console.log(cell);
         } else {
@@ -116,6 +115,37 @@ const clearData = function () {
     while (test < 16) {
         $("#" + test).empty();
         $("#" + test).removeClass("active");
+
+        $("#" + test).css({"background-color" : ""});
         test++;
+    }
+}
+
+const calculateCellColor = function(val) {
+    switch (val) {
+        case 2:
+            return {"background-color" : "#FEFAEC"};
+        case 4:
+            return {"background-color" : "#FDF5D8"};
+        case 8:
+            return {"background-color" : "#FCF0C5"};
+        case 16:
+            return {"background-color" : "#FBEBB1"};
+        case 32:
+            return {"background-color" : "#FAE69E"};
+        case 64:
+            return {"background-color" : "#F9E18B"};
+        case 128: 
+            return {"background-color" : "#F8DC77"};
+        case 256:
+            return {"background-color" : "#F7D764"};
+        case 512:
+            return {"background-color" : "#F6D251"};
+        case 1024:
+            return {"background-color" : "#F5CD3D"};
+        case 2048:
+            return {"background-color" : "#F4C82A"};
+        default:
+            return {"background-color" : "#F3C316"};
     }
 }

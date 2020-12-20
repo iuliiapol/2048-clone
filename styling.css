@@ -88,8 +88,8 @@ body {
 }
 
 .tiles .active {
-    background-color: black;
-    color: white;
+    background-color: #FEFAEC;
+    color: black;
 }
 
 .messages {
