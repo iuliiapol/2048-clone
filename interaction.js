@@ -1,4 +1,4 @@
-import Game from "./engine/game.js";
+import Game from "./game.js";
 
 /**
  * The entire file is used to handle interactions between the user and and the board itself
@@ -47,8 +47,10 @@ $(document).ready(() => {
         initBoard(game);
 
         if (game.gameState.over === true) {
+            $(".in_process").hide();
             $(".over_message").show();
         } else if (game.gameState.win === true) {
+            $(".in_process").hide();
             $(".win_message").show();
         }
     });
@@ -90,9 +92,7 @@ const initBoard = function (game) {
             $("#" + idx).css(calculateCellColor(arr_vals[idx]));
             console.log($("#" + idx).contents());
             console.log(cell);
-        } else {
-            console.log("inactive cell at index " + idx);
-        }
+        } 
         idx++;
     });
 };
@@ -103,6 +103,7 @@ const initBoard = function (game) {
 const clearData = function () {
     $(".over_message").hide();
     $(".win_message").hide();
+    $(".in_process").show();
 
     $("#score").empty();
     $("#is_over").empty();
@@ -114,8 +115,6 @@ const clearData = function () {
 
     while (test < 16) {
         $("#" + test).empty();
-        $("#" + test).removeClass("active");
-
         $("#" + test).css({"background-color" : ""});
         test++;
     }
