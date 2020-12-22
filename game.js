@@ -104,6 +104,7 @@ export default class Game {
             over: false
         }
 
+        //two initial tiles are added to the board
         this.addTile();
         this.addTile();
     }
