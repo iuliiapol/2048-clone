@@ -20,23 +20,12 @@ const initBoard = function (game) {
     let game_state = game.getGameState();
 
     let score = game_state.score;
-    let is_over = game_state.over;
-    let is_won = game_state.won;
     let arr_vals = game_state.board; //gets one dimensional array version 
-
-    console.log(arr_vals);
-    console.log("Score " + score);
-    console.log("Is_over " + is_over);
-    console.log("Is_won " + is_won);
 
     document.querySelector("#score").textContent = score;
 
     let idx = 0; //index to iterate through underlying array of values
-    
-    let cells = document.querySelector(".tiles").children;
 
-    console.log(cells);
-    
     while (idx < 16) {
         if (arr_vals[idx] != 0) {
             document.getElementById(idx).textContent = arr_vals[idx];
@@ -50,32 +39,28 @@ const initBoard = function (game) {
  * Removes filled in cells from the board and messages if they exist
  */
 const clearData = function () {
-    // let message = document.querySelector(".messages");
-    
-    // while (message.firstChild) {
-    //     message.removeChild(message.firstChild);
-    // }
-
-    // const break_line = document.createElement("br");
-    // message.appendChild(break_line);
-
     const break_line = document.createElement("br");
     appendMessage(break_line);
 
     document.querySelector("#score").textContent = 0;
 
     let idx = 0;
-    
+
     while (idx < 16) {
         document.getElementById(idx).textContent = "";
         document.getElementById(idx).style.backgroundColor = "";
         idx++;
-    }   
+    }
 }
 
-const appendMessage = function(msg_child) {
+/**
+ * Shows message based on the status of the game:
+ * empty (game is still playable), win message (win_msg) or over message (over_msg)
+ * @param {} msg_child - Node with the message
+ */
+const appendMessage = function (msg_child) {
     let message = document.querySelector(".messages");
-    
+
     while (message.firstChild) {
         message.removeChild(message.firstChild);
     }
@@ -88,7 +73,7 @@ const appendMessage = function(msg_child) {
  * @param {} val - value of the cell
  */
 
-const calculateCellColor = function(val) {
+const calculateCellColor = function (val) {
     switch (val) {
         case 2:
             return "#FEFAEC";
@@ -102,7 +87,7 @@ const calculateCellColor = function(val) {
             return "#FAE69E";
         case 64:
             return "#F9E18B";
-        case 128: 
+        case 128:
             return "#F8DC77";
         case 256:
             return "#F7D764";
@@ -117,7 +102,10 @@ const calculateCellColor = function(val) {
     }
 }
 
-//convenience method
+/**
+ * Convenience method
+ * @param {} callback 
+ */
 let ready = (callback) => {
     if (document.readyState != "loading") callback();
     else document.addEventListener("DOMContentLoaded", callback);
@@ -129,23 +117,22 @@ ready(() => {
     initBoard(game);
 
     //logic for resetting value when the reset button is clicked on
-    document.querySelector("#reset").addEventListener("click", (event) => 
-        { 
-            //reset the original board and create new board
-            clearData();
-            game.setupNewGame();
-            initBoard(game);
-        });
+    document.querySelector("#reset").addEventListener("click", (event) => {
+        //reset the original board and create new board
+        clearData();
+        game.setupNewGame();
+        initBoard(game);
+    });
 
     document.addEventListener("keydown", (event) => {
         let direction; //will store direction
 
-        //if game is lost, do not allow to accept keydown events
+        //if game is over, do not allow to accept keydown events
         if (game.gameState.over === true) {
             return;
         }
 
-           //sets up correct direction
+        //sets up correct direction
         switch (event.key) {
             case "ArrowUp":
                 direction = "up";
@@ -173,12 +160,12 @@ ready(() => {
             let over = document.createElement("div");
             over.classList.add("over_message");
             over.innerHTML = over_msg;
-            appendMessage(over);
+            appendMessage(over); //appending "over" message
         } else if (game.gameState.win === true) {
             let win = document.createElement("div");
             win.classList.add("win_message");
             win.innerHTML = win_msg;
-            appendMessage(win);
+            appendMessage(win); //appending "win" message
         }
     });
 });

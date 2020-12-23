@@ -87,11 +87,6 @@ body {
     text-transform: uppercase;
 }
 
-.tiles .active {
-    background-color: #FEFAEC;
-    color: black;
-}
-
 .messages {
     text-align: center;
     padding: 10px 0px 10px 0px;
