@@ -1,5 +1,6 @@
 import Game from "./game.js"
 
+/** Messages notifying about the status of the game when appropriate */
 const win_msg = 'Congratulations! You WON! Reset the game or continue playing :)';
 const over_msg = 'You lost the game :( To start over press the "reset game" button';
 
